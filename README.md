@@ -1,4 +1,4 @@
 背景：gin框架中没有像Django一样自带session我们可以使用第三方包。
-为了更好的立即session和cookie的工作原理通过Gin中间件实现了session
+为了更好的理解session和cookie的工作原理以及面向接口编程思想借助Gin中间件实现session
 
 扩展：支持MySQL、Redis等其他扩展
