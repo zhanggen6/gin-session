@@ -11,7 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11df6a32-60fb-4acc-ae39-a29c27ac96a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sessions/rediscell.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sessions/redisstore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/memerycell.go" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/memerycell.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/memerystore.go" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/memerystore.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/sessioninterface.go" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/sessioninterface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/storeinterface.go" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/storeinterface.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Go File" />
       </list>
     </option>
@@ -40,6 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
@@ -50,7 +63,16 @@
       <recent name="D:\gin-seeion\sessions" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build assert.go">
+    <configuration name="go build assert.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gin-seeion" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/assert.go" />
+      <package value="gin-seeion" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="gin-seeion" />
       <working_directory value="$PROJECT_DIR$" />
@@ -62,6 +84,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build assert.go" />
         <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
@@ -80,6 +103,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -90,25 +114,29 @@
     </environment>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1322" height="197" key="GridCell.Tab.0.bottom" timestamp="1609133364959">
+    <state x="671" y="166" key="FileChooserDialogImpl" timestamp="1609226578178">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="197" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609133364959" />
-    <state width="1322" height="197" key="GridCell.Tab.0.center" timestamp="1609133364959">
+    <state x="671" y="166" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609226578178" />
+    <state width="1306" height="192" key="GridCell.Tab.0.bottom" timestamp="1609291206962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="197" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1609133364959" />
-    <state width="1322" height="197" key="GridCell.Tab.0.left" timestamp="1609133364959">
+    <state width="1306" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1609291206962" />
+    <state width="1306" height="192" key="GridCell.Tab.0.center" timestamp="1609291206962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="197" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1609133364959" />
-    <state width="1322" height="197" key="GridCell.Tab.0.right" timestamp="1609133364959">
+    <state width="1306" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1609291206962" />
+    <state width="1306" height="192" key="GridCell.Tab.0.left" timestamp="1609291206962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="197" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1609133364959" />
-    <state x="587" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1609132015146">
+    <state width="1306" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1609291206962" />
+    <state width="1306" height="192" key="GridCell.Tab.0.right" timestamp="1609291206962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="587" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609132015146" />
+    <state width="1306" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1609291206962" />
+    <state x="587" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1609292970537">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="587" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609292970537" />
   </component>
 </project>

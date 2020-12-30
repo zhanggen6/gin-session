@@ -18,7 +18,10 @@ func NewMemStore() (stor *MemStore) {
 	store := &MemStore{store: make(map[string]SessionInterface, 200)}
 	store.SetSession()
 	return store
+}
 
+func (ms *MemStore)InitStore()(store StoreInterface) {
+	return
 }
 
 //获取 1条session记录中 从session store中
@@ -31,13 +34,13 @@ func (sm *MemStore) GetSession(sessionID string) (memCell SessionInterface) {
 
 //服务端创建1个sessionID(唯一的字符串)设置 1条session记录中 到session store中,
 //返回给用户写到cookies
-func (sm *MemStore) SetSession()(sessionID string) {
+func (sm *MemStore) SetSession() (sessionID string) {
 	sm.tablelock.Lock()
 	defer sm.tablelock.Unlock()
-	sessionID=uuid.NewV4().String()
-	memCell:= NewSessionCell()
+	sessionID = uuid.NewV4().String()
+	memCell := NewMemCell()
 	sm.store[sessionID] = memCell
-	return
+	return sessionID
 }
 
 //删除 1条session记录中 从session store中

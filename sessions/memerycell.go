@@ -21,7 +21,7 @@ session就是以下数据结构
 
 */
 //1条session记录对应的内存结构体
-type SessionCell struct {
+type MemCell struct {
 	sessionID string
 	session   map[string]interface{}
 	//行锁：相当于数据库中行锁
@@ -29,21 +29,21 @@ type SessionCell struct {
 }
 
 //初始化1条session记录
-func NewSessionCell() (cell *SessionCell) {
-	return &SessionCell{
+func NewMemCell() (cell *MemCell) {
+	return &MemCell{
 		session: make(map[string]interface{}, 20),
 	}
 
 }
 
-func (sc *SessionCell)Init(sessionID string) (cell *SessionCell) {
+func (sc *MemCell)Init(sessionID string) (cell *MemCell) {
 	sc.sessionID = sessionID
-	cell=sc
+	cell = sc
 	return
 }
 
 //获取 1条session记录中 key对应的值
-func (sc *SessionCell) Get(key string) (value interface{}) {
+func (sc *MemCell) Get(key string) (value interface{}) {
 	sc.rowlock.RLock()
 	defer sc.rowlock.RUnlock()
 	value = sc.session[key]
@@ -52,16 +52,19 @@ func (sc *SessionCell) Get(key string) (value interface{}) {
 }
 
 //设置 1条session记录中 key对应的值
-func (sc *SessionCell) Set(key string, value interface{}) {
+func (sc *MemCell) Set(key string, value interface{}) {
 	sc.rowlock.Lock()
 	defer sc.rowlock.Unlock()
 	sc.session[key] = value
 }
 
 //删除 1条session记录中 key对应的值
-func (sc *SessionCell) Del(key string) {
+func (sc *MemCell) Del(key string) {
 	sc.rowlock.Lock()
 	defer sc.rowlock.Unlock()
 	delete(sc.session, key)
 
+}
+
+func (sc *MemCell)Save()(){
 }

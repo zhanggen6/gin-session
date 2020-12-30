@@ -7,6 +7,7 @@ import (
 )
 
 func login(c *gin.Context) {
+	//从上下文中获取到session data
 	sessionData, ok := c.Get(sessions.ContextID)
 	if !ok {
 		fmt.Println("获取session data 失败！")
@@ -30,10 +31,13 @@ func index(c *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	//router.LoadHTMLGlob("templates/*")
+	router.LoadHTMLGlob("templates/*")
 	router.Use(sessions.GinSessionMiddleWare())
 	router.GET("/login/", login)
 	router.GET("/index/", index)
+	router.NoRoute(func(c *gin.Context) {
+		c.HTML(404, "404.html", nil)
+	})
 	err := router.Run(":8002")
 	if err != nil {
 		fmt.Println("Gin启动失败！")

@@ -10,6 +10,7 @@ const (
 	domain    = "/"         //设置cookie的作用域名
 	maxAge    = 3600        //设置cookie的超时时间
 
+
 )
 
 var SessionStore StoreInterface
