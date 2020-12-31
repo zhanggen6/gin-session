@@ -6,7 +6,7 @@ import (
 )
 
 /*
-session就是以下数据结构
+下数据结构
 
  {
  sessionID1:{sessionID1:{"islogin":true,"username":"张三" }，
@@ -14,12 +14,8 @@ session就是以下数据结构
  sessionID3:{sessionID3:{"islogin":true,"username":"王五" }，
 
  }
-
-	go doc builtin.delete
-	sc.session[key].var
-
-
 */
+
 //1条session记录对应的内存结构体
 type MemCell struct {
 	sessionID string
@@ -29,16 +25,19 @@ type MemCell struct {
 }
 
 //初始化1条session记录
-func NewMemCell() (cell *MemCell) {
+func NewMemCell(cellID string) (cell *MemCell) {
 	return &MemCell{
+		//cell中的sessionID是为了能在中间件创建sessioncell之后getkey返回给cookie！
+		sessionID: cellID,
+		//存储用户session数据的map
 		session: make(map[string]interface{}, 20),
 	}
 
 }
 
-func (sc *MemCell)Init(sessionID string) (cell *MemCell) {
-	sc.sessionID = sessionID
-	cell = sc
+func (mc *MemCell) Init(sessionID string) (cell *MemCell) {
+	mc.sessionID = sessionID
+	cell = mc
 	return
 }
 
@@ -52,19 +51,29 @@ func (sc *MemCell) Get(key string) (value interface{}) {
 }
 
 //设置 1条session记录中 key对应的值
-func (sc *MemCell) Set(key string, value interface{}) {
-	sc.rowlock.Lock()
-	defer sc.rowlock.Unlock()
-	sc.session[key] = value
+func (mc *MemCell) Set(key string, value interface{}) {
+	mc.rowlock.Lock()
+	defer mc.rowlock.Unlock()
+	mc.session[key] = value
+	fmt.Println(mc.session)
 }
 
 //删除 1条session记录中 key对应的值
-func (sc *MemCell) Del(key string) {
-	sc.rowlock.Lock()
-	defer sc.rowlock.Unlock()
-	delete(sc.session, key)
+func (mc *MemCell) Del(key string) {
+	mc.rowlock.Lock()
+	defer mc.rowlock.Unlock()
+	delete(mc.session, key)
 
 }
+func (mc *MemCell) Save() {
+	fmt.Println("内存版session，不需要save")
+}
 
-func (sc *MemCell)Save()(){
+func (mc *MemCell) GetKey() (key string) {
+	key = mc.sessionID
+	return
+}
+
+func (mc *MemCell) Load() (err error) {
+	return
 }

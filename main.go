@@ -12,10 +12,12 @@ func login(c *gin.Context) {
 	if !ok {
 		fmt.Println("获取session data 失败！")
 	}
-	session := sessionData.(*sessions.SessionCell)
+	//为什么一直做接口?就是能在这里动态调用。
+	session := sessionData.(sessions.SessionInterface)
 	session.Set("username", "张根")
 	session.Set("gender", "男")
 	session.Set("age", "18")
+	session.Save()
 	c.JSON(200, gin.H{"data": "登录成功"})
 }
 
@@ -25,7 +27,7 @@ func index(c *gin.Context) {
 		fmt.Println("获取session data 失败！")
 
 	}
-	session := sessionData.(*sessions.SessionCell)
+	session := sessionData.(sessions.SessionInterface)
 	c.JSON(200, gin.H{"data": "首页", "姓名": session.Get("username"), "性别": session.Get("gender"), "年龄": session.Get("age")})
 }
 
