@@ -1,6 +1,6 @@
 gin-seesion
 
-The agile,concurrence safe,fantastic session storage solution for Gin, aims to be developer friendly.
+The agile,concurrence safe,fantastic session solution for Gin, aims to be developer friendly.
 
 Features
 
