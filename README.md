@@ -10,5 +10,5 @@ The agile,Concurrence safe,fantastic session storage solution for Gin, aims to b
 go get https://github.com/zhanggen6/gin-session
 
 # Contributing
-You can help to deliver a better one, check out things you can do
+You can help to deliver a better one, check out things you can do.
 
